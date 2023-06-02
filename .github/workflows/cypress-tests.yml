@@ -19,3 +19,15 @@ jobs:
         
       - name: run E2E tests
         run: ${{ github.event.inputs.cli }}
+
+  cypress-chrome-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3.5.2
+        
+      - name: Install dependencies
+        run: yarn install
+        
+      - name: run E2E tests
+        run: ${{ github.event.inputs.cli }}
